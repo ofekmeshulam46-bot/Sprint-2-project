@@ -4,16 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="/styles/styles.css" />
   </head>
-  <body>
+  <body onload="onInit()" onresize="onResize()">
     <header>Meme Generator</header>
 
     <section class="image-gallery"></section>
 
     <section class="meme-editor"></section>
 
-
-
+    <div class="canvas-container">
+      <canvas
+        width="400"
+        height="400"
+        onmousedown="onDown(event)"
+        ontouchstart="onDown(event)"
+        onmouseup="onUp()"
+        ontouchend="onUp()"
+        onmousemove="onMove(event)"
+        ontouchmove="onMove(event)"
+      ></canvas>
+    </div>
     <script src="js/upload.js"></script>
     <script src="js/share.js"></script>
     <script src="js/service.js"></script>
