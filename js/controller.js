@@ -2,16 +2,19 @@
 var gElCanvas
 var gCtx
 
-var IMAGE=
+var IMAGE = '<img src="meme-imgs/square/8.jpg">'
 
-function renderMeme(event) {
-  onImgInput(event)
+function renderMeme(image) {
+  gCtx.drawImage(image, 0, 0, gElCanvas.width, gElCanvas.height)
 }
 
 function onInit() {
   gElCanvas = document.querySelector('canvas')
   gCtx = gElCanvas.getContext('2d')
   resizeCanvas()
+  renderMeme(IMAGE)
+  const imgContainer = document.querySelector('img-test-container')
+  imgContainer.innerHTML = IMAGE
 }
 
 function onResize() {
