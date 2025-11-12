@@ -1,0 +1,15 @@
+
+
+
+.canvas-container {
+  width: 60vw;
+  height: 60vh;
+  margin: .5em auto;
+}
+
+canvas {
+  outline: 1px solid green;
+  display: block;
+  margin: auto;
+  background-color: white;
+}
