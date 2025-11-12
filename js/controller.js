@@ -2,7 +2,11 @@
 var gElCanvas
 var gCtx
 
-function renderMeme() {}
+var IMAGE=
+
+function renderMeme(event) {
+  onImgInput(event)
+}
 
 function onInit() {
   gElCanvas = document.querySelector('canvas')

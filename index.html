@@ -9,6 +9,17 @@
   <body onload="onInit()" onresize="onResize()">
     <header>Meme Generator</header>
 
+    <div class="inputs">
+      <label for="upload">Upload img from local:</label>
+      <input
+        type="file"
+        id="upload"
+        class="file-input btn"
+        name="image"
+        onchange="onImgInput(event)"
+      />
+        </div>
+
     <section class="image-gallery"></section>
 
     <section class="meme-editor"></section>
@@ -26,8 +37,9 @@
       ></canvas>
     </div>
 
-    <!-- <script src="js/upload.js"></script>
-    <script src="js/share.js"></script> -->
+    <script src="js/upload.js"></script>
+    <script src="js/share.js"></script>
+
     <script src="js/service.js"></script>
     <script src="js/controller.js"></script>
   </body>
