@@ -2,19 +2,23 @@
   box-sizing: border-box;
 }
 
-body {
+
+/* body {
   text-align: center;
+} */
+
+header {
+  text-align: center;
+
 }
 
-
 .img-test-container {
-  width: 100%;
+  width: 100vw;
   height: 80vh;
   border: 5px solid gray;
-  /* background-color: red; */
 }
 
 img {
-  width: 7rem;
+  width: 15rem;
 
 }
