@@ -1,14 +1,13 @@
 'use strict'
-var gElCanvas
-var gCtx
+var gElCanvasContainer = document.querySelector('.canvas-container')
+var gElCanvas = document.querySelector('canvas')
+var gCtx = gElCanvas.getContext('2d')
 var gStartPos = null
 var IMAGE = new Image()
 var textBox = document.querySelector('.text-box')
 
 function onInit() {
   initGallery()
-  gElCanvas = document.querySelector('canvas')
-  gCtx = gElCanvas.getContext('2d')
   resizeCanvas()
   IMAGE.src = 'meme-imgs/square/8.jpg'
   IMAGE.onload = () => renderMeme(IMAGE)
@@ -33,7 +32,7 @@ function onClearCanvas() {
 }
 
 function renderMeme(image) {
-  if (!image.complete) return
+  // if (!image.complete) return
   const canvasWidth = gElCanvas.width
   // const canvasHeight = (image.naturalHeight / image.naturalWidth) * canvasWidth
 

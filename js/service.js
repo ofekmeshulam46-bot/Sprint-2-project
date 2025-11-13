@@ -5,7 +5,8 @@ var gBrush = { color: 'black', size: 5, shape: 'square' }
 function getPenSettings() {
   return gBrush
 }
-var gImgs = [{ id: 1, url: 'meme-imgs/square/1.jpg', keywords: ['funny', '1'] },{ id: 2, url: 'meme-imgs/square/2.jpg', keywords: ['2'] }]
+var gImgs = [{ id: 1, url: 'meme-imgs/square/1.jpg', keywords: ['funny', '1'] },
+{ id: 2, url: 'meme-imgs/square/2.jpg', keywords: ['2'] }]
 
 var gMeme = {
   selectedImgId: 5,
