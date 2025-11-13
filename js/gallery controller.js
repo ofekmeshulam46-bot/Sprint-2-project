@@ -26,25 +26,21 @@ function renderGallery(images) {
 
       // show canvas container
       gElCanvasContainer.style.display = 'block'
+    //   resizeCanvas()
 
-      // set the global IMAGE and render after it loads
-      IMAGE.onload = () => renderMeme(IMAGE)
-      IMAGE.src = imgData.url
+      // create a new temporary image
+      const selectedImage = new Image()
+      selectedImage.onload = () => {
+        // only after it's fully loaded:
+        IMAGE = selectedImage // update the global IMAGE
+        renderMeme(IMAGE) // draw on canvas
+      }
+      selectedImage.src = imgData.url
     })
-
-    // img.addEventListener('click', () => {
-    //   // hide gallery
-    //   imageGallery.style.display = 'none'
-
-    //   // show canvas container
-    //   gElCanvasContainer.style.display = 'block'
-
-    //   // set the global IMAGE and render after it loads
-    //   IMAGE.onload = () => renderMeme(IMAGE)
-    //   IMAGE.src = imgData.url
-    // })
   })
 }
+
+//   })
 
 //   images.forEach((imgData) => {
 //     const img = new Image()
@@ -72,4 +68,4 @@ function renderGallery(images) {
 //       //   selectedImage.onload = () => renderMeme(selectedImage)
 //     })
 //   })
-// }
+//

@@ -7,8 +7,8 @@ var IMAGE = new Image()
 var textBox = document.querySelector('.text-box')
 
 function onInit() {
-  initGallery()
   resizeCanvas()
+  initGallery()
   IMAGE.src = 'meme-imgs/square/8.jpg'
   IMAGE.onload = () => renderMeme(IMAGE)
 }
@@ -32,7 +32,6 @@ function onClearCanvas() {
 }
 
 function renderMeme(image) {
-  // if (!image.complete) return
   const canvasWidth = gElCanvas.width
   // const canvasHeight = (image.naturalHeight / image.naturalWidth) * canvasWidth
 
@@ -65,20 +64,24 @@ function drawCanvasText(text) {
 // Whenever user types — update both places
 // textBox.addEventListener('input', () => renderMeme(IMAGE))
 
-function onDown(ev) {
-  gIsMouseDown = true
-  // Get the ev pos from mouse or touch
-  const pos = getEvPos(ev)
-  console.log('pos', pos)
 
-  //   if (!isCanvasClicked(pos)) return
-  console.log('onDown')
 
-  //Save the pos we start from
-  gStartPos = pos
 
-  console.log('success down:')
-}
+
+// function onDown(ev) {
+//   gIsMouseDown = true
+//   // Get the ev pos from mouse or touch
+//   const pos = getEvPos(ev)
+//   console.log('pos', pos)
+
+//   //   if (!isCanvasClicked(pos)) return
+//   console.log('onDown')
+
+//   //Save the pos we start from
+//   gStartPos = pos
+
+//   console.log('success down:')
+// }
 
 // function onMove(ev) {
 //   if (!gIsMouseDown) return
