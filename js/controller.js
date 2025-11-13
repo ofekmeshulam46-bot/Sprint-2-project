@@ -3,8 +3,10 @@ var gElCanvas
 var gCtx
 var gStartPos = null
 var IMAGE = new Image()
+var textBox = document.querySelector('.text-box')
 
 function onInit() {
+  initGallery()
   gElCanvas = document.querySelector('canvas')
   gCtx = gElCanvas.getContext('2d')
   resizeCanvas()
@@ -14,6 +16,7 @@ function onInit() {
 
 function resizeCanvas() {
   const elContainer = document.querySelector('.canvas-container')
+
   gElCanvas.width = elContainer.offsetWidth
   gElCanvas.height = elContainer.offsetHeight
 }
@@ -30,13 +33,38 @@ function onClearCanvas() {
 }
 
 function renderMeme(image) {
+  if (!image.complete) return
   const canvasWidth = gElCanvas.width
-  const canvasHeight = (image.naturalHeight / image.naturalWidth) * canvasWidth
+  // const canvasHeight = (image.naturalHeight / image.naturalWidth) * canvasWidth
+
   // gElCanvas.height =
   //   (image.naturalHeight / image.naturalWidth) * gElCanvas.width
+
+  // gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
+
   gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
   gCtx.drawImage(image, 0, 0, gElCanvas.width, gElCanvas.height)
+  drawCanvasText(textBox.value)
 }
+
+function onTextInput(inputText) {
+  setLineTxt(inputText, 0)
+  renderMeme(IMAGE)
+}
+
+function drawCanvasText(text) {
+  if (!text) return
+  const fontSize = gElCanvas.width * 0.13
+  gCtx.font = `${fontSize}px Arial`
+  gCtx.fillStyle = 'black'
+  gCtx.textAlign = 'center'
+  gCtx.textBaseline = 'middle'
+
+  gCtx.fillText(text, gElCanvas.width / 2, gElCanvas.height * 0.15) // line near the bottom
+}
+
+// Whenever user types — update both places
+// textBox.addEventListener('input', () => renderMeme(IMAGE))
 
 function onDown(ev) {
   gIsMouseDown = true
@@ -53,34 +81,34 @@ function onDown(ev) {
   console.log('success down:')
 }
 
-function onMove(ev) {
-  if (!gIsMouseDown) return
-  const pos = getEvPos(ev)
-  drawLine(pos.x, pos.y)
-  gStartPos = pos
+// function onMove(ev) {
+//   if (!gIsMouseDown) return
+//   const pos = getEvPos(ev)
+//   drawLine(pos.x, pos.y)
+//   gStartPos = pos
 
-  console.log('success move:')
-}
+//   console.log('success move:')
+// }
 
-function onUp() {
-  // console.log('onUp')
-  gIsMouseDown = false
+// function onUp() {
+//   // console.log('onUp')
+//   gIsMouseDown = false
 
-  console.log('success up:')
-}
+//   console.log('success up:')
+// }
 
-function drawLine(x, y) {
-  const penSettings = getPenSettings()
-  gCtx.lineWidth = penSettings.size
-  gCtx.strokeStyle = penSettings.color
-  if (penSettings.shape === 'circle') {
-    gCtx.lineCap = 'round'
-  } else {
-    gCtx.lineCap = 'square'
-  }
-  // gCtx. = penSettings.shape
-  gCtx.beginPath()
-  gCtx.moveTo(gStartPos.x, gStartPos.y)
-  gCtx.lineTo(x, y)
-  gCtx.stroke()
-}
+// function drawLine(x, y) {
+//   const penSettings = getPenSettings()
+//   gCtx.lineWidth = penSettings.size
+//   gCtx.strokeStyle = penSettings.color
+//   if (penSettings.shape === 'circle') {
+//     gCtx.lineCap = 'round'
+//   } else {
+//     gCtx.lineCap = 'square'
+//   }
+//   // gCtx. = penSettings.shape
+//   gCtx.beginPath()
+//   gCtx.moveTo(gStartPos.x, gStartPos.y)
+//   gCtx.lineTo(x, y)
+//   gCtx.stroke()
+// }

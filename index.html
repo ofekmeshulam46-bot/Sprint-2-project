@@ -24,7 +24,7 @@
 
     <section class="meme-editor"></section>
 
-    <div class="canvas-container">
+    <div class="canvas-container" style="display:none" >
       <canvas
         width="400"
         height="400"
@@ -36,7 +36,14 @@
         ontouchmove="onMove(event)"
       ></canvas>
 
-      <input class="text-box" type="text" id="canvas-input" />
+      <!-- <label for="text-input">Write here:</label> -->
+      <input
+        class="text-box"
+        type="text"
+        id="text-input"
+        placeholder="enter text"
+        oninput="onTextInput(this.value)"
+      />
     </div>
 
     <!-- style="display: none"  -->
@@ -45,5 +52,6 @@
     <script src="js/share.js"></script>
     <script src="js/service.js"></script>
     <script src="js/controller.js"></script>
+    <script src="js/gallery controller.js"></script>
   </body>
 </html>

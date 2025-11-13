@@ -2,9 +2,11 @@
   position: relative;
   display: block;
 
-  width: 80vw;
+  width: 50vw;
   height: 60vh;
-  margin: .5em auto;
+  /* margin: .5em auto; */
+  margin-block-start: 10em;
+  margin-inline-start: 5em;
   border: 2px solid blue;
 
   background-color: grey;
@@ -28,16 +30,41 @@
 
 
 .text-box {
+  z-index: 10;
   position: absolute;
-  top: 8%;
+
+
+   top: 8%;
+  height: 10%;
+  width: 60%;
+  right: -70%;
+
+  /* top: 8%;
   height: 10%;
   width: 90%;
   left: 5%;
-  right: 5%;
-  /* font-size: 2rem; */
-  text-align: center;
-  color: red;
+  right: 5%; */
+
+
   background-color: transparent;
+
+  font-size: 4em;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color: black;
   border: 3px solid orange;
-  z-index: 10;
+}
+
+
+.text-box::placeholder {
+  font-size: 4rem;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0.7;
+  /* remove the default fade effect */
+  color: gray;
+
+
 }
