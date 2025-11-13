@@ -2,12 +2,14 @@
 var gElCanvas
 var gCtx
 var gStartPos = null
+var IMAGE
+
 
 function onInit() {
   gElCanvas = document.querySelector('canvas')
   gCtx = gElCanvas.getContext('2d')
   resizeCanvas()
-  var IMAGE = new Image()
+  IMAGE = new Image()
   IMAGE.src = 'meme-imgs/square/8.jpg'
   IMAGE.onload = () => renderMeme(IMAGE)
 }
@@ -28,11 +30,7 @@ function onClearCanvas() {
   gCtx.fillRect(0, 0, gElCanvas.width, gElCanvas.height)
 }
 
-function renderBaseImage() {
-  if (gBaseImage) {
-    gCtx.drawImage(gBaseImage, 0, 0, gElCanvas.width, gElCanvas.height)
-  }
-}
+
 function onContainerClicked(container) {
   container.innerHTML = IMAGE
   gElCanvas.height =

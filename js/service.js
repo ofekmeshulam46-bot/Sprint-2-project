@@ -15,6 +15,21 @@ var gMeme = {
 
 var gKeywordSearchCountMap = { funny: 12, cat: 16, baby: 2 }
 
+
+
+
+function getMeme(gMeme) {
+return gMeme
+}
+
+
+
+
+
+
+
+
+
 function getEvPos(ev) {
   const TOUCH_EVS = ['touchstart', 'touchmove', 'touchend']
 
