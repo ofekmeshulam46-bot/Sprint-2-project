@@ -7,8 +7,8 @@ var IMAGE = new Image()
 var textBox = document.querySelector('.text-box')
 
 function onInit() {
-  resizeCanvas()
   initGallery()
+  resizeCanvas()
   IMAGE.src = 'meme-imgs/square/8.jpg'
   IMAGE.onload = () => renderMeme(IMAGE)
 }

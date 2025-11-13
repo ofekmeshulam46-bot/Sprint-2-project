@@ -26,7 +26,7 @@ function renderGallery(images) {
 
       // show canvas container
       gElCanvasContainer.style.display = 'block'
-    //   resizeCanvas()
+      resizeCanvas()
 
       // create a new temporary image
       const selectedImage = new Image()
