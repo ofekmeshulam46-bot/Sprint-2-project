@@ -1,14 +1,12 @@
 .canvas-container {
   position: relative;
-  display: grid;
-  justify-content: center;
-  /* width: 80vw;
+  display: block;
+
+  width: 80vw;
   height: 60vh;
   margin: .5em auto;
-  background-color: rgb(204, 28, 28);
-  border: 2px solid blue; */
+  border: 2px solid blue;
 
-  display: block;
   background-color: grey;
 
 
@@ -19,10 +17,9 @@
 .canvas-container canvas {
   display: block;
   position: relative;
-  width: 80%;
+  background-color: pink;
   margin: auto;
   outline: 1px solid green;
-  /* display: block; */
   /* background-color: white; */
 
 
@@ -34,13 +31,13 @@
   position: absolute;
   top: 8%;
   height: 10%;
-  width: 80%;
-  justify-self: center;
-  left: 10%;
-  right: 10%;
+  width: 90%;
+  left: 5%;
+  right: 5%;
   /* font-size: 2rem; */
   text-align: center;
   color: red;
-  background-color: rgb(176, 22, 190);
+  background-color: transparent;
   border: 3px solid orange;
+  z-index: 10;
 }

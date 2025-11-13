@@ -12,13 +12,8 @@ header {
 
 }
 
-.img-test-container {
-  width: 100vw;
-  height: 80vh;
-  border: 5px solid gray;
-}
 
-img {
-  width: 80%;
+/* img {
+  width: 5em;
 
-}
+} */
