@@ -3,38 +3,8 @@
 }
 
 
-/* body {
-  text-align: center;
-} */
 
 header {
   text-align: center;
 
-}
-
-
-/* img {
-  width: 5em;
-
-} */
-
-.image-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  /* allow multiple rows */
-  gap: 10px;
-  /* optional spacing between images */
-}
-
-.image-gallery img {
-  width: 120px;
-  /* or any size you like */
-  height: auto;
-  cursor: pointer;
-  border: 2px solid transparent;
-  /* for hover effect later */
-}
-
-.image-gallery img:hover {
-  border-color: orange;
 }

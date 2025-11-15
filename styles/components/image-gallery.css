@@ -1,0 +1,16 @@
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.image-gallery img {
+    width: 50rem;
+    height: auto;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.image-gallery img:hover {
+    border-color: orange;
+}
