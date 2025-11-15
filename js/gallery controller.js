@@ -33,10 +33,9 @@ function renderGallery(images) {
       selectedImage.onload = () => {
         // only after it's fully loaded:
         IMAGE = selectedImage // update the global IMAGE
-        renderMeme(IMAGE) // draw on canvas
+        renderMeme(IMAGE,imgData.id) // draw on canvas
       }
       selectedImage.src = imgData.url
-      console.log('img.dataset.id:', img.dataset.id)
     })
   })
 }

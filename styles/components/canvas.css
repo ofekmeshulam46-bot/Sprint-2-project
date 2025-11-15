@@ -30,10 +30,22 @@
     top: -5em;
 
   }
+
+
 }
 
 
+.text-bigger {
+  position: absolute;
+  right: 16em;
+  top: 16em;
+}
 
+.text-smaller {
+  position: absolute;
+  right: 17.7em;
+  top: 16em;
+}
 
 .text-box {
   z-index: 10;
