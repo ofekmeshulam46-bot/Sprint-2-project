@@ -39,6 +39,8 @@
       --
     </button>
 
+    <button onclick="onAddLine()">Add Line</button>
+
     <div class="canvas-container" style="display: none">
       <a
         href="#"
@@ -64,6 +66,7 @@
         id="text-input"
         placeholder="enter text"
         oninput="onTextInput(this.value)"
+        style="display: none; border: 2px solid orange"
       />
 
       <canvas

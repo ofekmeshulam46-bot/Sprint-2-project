@@ -1,44 +1,44 @@
-'use strict'
+// 'use strict'
 
-const imageGallery = document.querySelector('.image-gallery')
+// const imageGallery = document.querySelector('.image-gallery')
 
-function initGallery() {
-  renderGallery(gImgs)
-}
+// function initGallery() {
+//   renderGallery(gImgs)
+// }
 
-function renderGallery(images) {
-  imageGallery.innerHTML = '' // clear container
+// function renderGallery(images) {
+//   imageGallery.innerHTML = '' // clear container
 
-  // // Optional: add classes, IDs, event listeners
-  // img.classList.add('gallery-img')
-  // img.dataset.id = imgData.id
+//   // // Optional: add classes, IDs, event listeners
+//   // img.classList.add('gallery-img')
+//   // img.dataset.id = imgData.id
 
-  // Append image to gallery when loaded
-  let imgId = 0
-  images.forEach((imgData) => {
-    const img = new Image()
-    img.src = imgData.url
-    img.dataset.id = imgData.id
-    imageGallery.appendChild(img)
-    img.addEventListener('click', () => {
-      // hide gallery
-      imageGallery.style.display = 'none'
+//   // Append image to gallery when loaded
+//   let imgId = 0
+//   images.forEach((imgData) => {
+//     const img = new Image()
+//     img.src = imgData.url
+//     img.dataset.id = imgData.id
+//     imageGallery.appendChild(img)
+//     img.addEventListener('click', () => {
+//       // hide gallery
+//       imageGallery.style.display = 'none'
 
-      // show canvas container
-      gElCanvasContainer.style.display = 'block'
-      resizeCanvas()
+//       // show canvas container
+//       gElCanvasContainer.style.display = 'block'
+//       resizeCanvas()
 
-      // create a new temporary image
-      const selectedImage = new Image()
-      selectedImage.onload = () => {
-        // only after it's fully loaded:
-        IMAGE = selectedImage // update the global IMAGE
-        renderMeme(IMAGE,imgData.id) // draw on canvas
-      }
-      selectedImage.src = imgData.url
-    })
-  })
-}
+//       // create a new temporary image
+//       const selectedImage = new Image()
+//       selectedImage.onload = () => {
+//         // only after it's fully loaded:
+//         IMAGE = selectedImage // update the global IMAGE
+//         renderMeme(IMAGE,imgData.id) // draw on canvas
+//       }
+//       selectedImage.src = imgData.url
+//     })
+//   })
+// }
 
 //   })
 
@@ -69,3 +69,71 @@ function renderGallery(images) {
 //     })
 //   })
 //
+
+'use strict'
+
+const imageGallery = document.querySelector('.image-gallery')
+
+function initGallery() {
+  renderGallery(gImgs)
+}
+
+function renderGallery(images) {
+  console.log('Images array:', images)
+  console.log('Gallery before:', imageGallery.innerHTML)
+  imageGallery.innerHTML = '' // clear container
+
+  images.forEach((imgData) => {
+    const img = new Image()
+    img.dataset.id = imgData.id
+    img.src = imgData.url // start loading
+    imageGallery.appendChild(img) // append immediately
+
+    // Click handler
+    img.addEventListener('click', () => {
+      imageGallery.style.display = 'none'
+      gElCanvasContainer.style.display = 'block'
+      resizeCanvas()
+
+      IMAGE = new Image()
+      IMAGE.onload = () => renderMeme(IMAGE, imgData.id)
+      IMAGE.src = imgData.url
+
+      editLine(0)
+    })
+  })
+}
+
+// function renderGallery(images) {
+//   imageGallery.innerHTML = '' // clear container
+
+//   images.forEach((imgData) => {
+//     const img = new Image()
+//     img.src = imgData.url
+
+//     // Append image only when fully loaded
+//     img.onload = () => {
+//       imageGallery.appendChild(img)
+//     }
+
+//     img.dataset.id = imgData.id
+
+//     // Click handler
+//     img.addEventListener('click', () => {
+//       // Hide gallery
+//       imageGallery.style.display = 'none'
+
+//       // Show canvas container
+//       gElCanvasContainer.style.display = 'block'
+//       resizeCanvas()
+
+//       // Update global IMAGE and render meme
+//       IMAGE = new Image()
+//       IMAGE.onload = () => renderMeme(IMAGE, imgData.id)
+//       IMAGE.src = imgData.url
+
+//       // Show the input box for the first line
+//       editLine(0)
+//     })
+//   })
+// }
