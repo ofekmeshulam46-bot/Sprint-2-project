@@ -1,15 +1,17 @@
 'use strict'
 var gIsMouseDown = false
 var gBrush = { color: 'black', size: 5, shape: 'square' }
-
+var gTextBrush = { color: 'black', size: 5, shape: 'square' }
 function getPenSettings() {
   return gBrush
 }
-var gImgs = [{ id: 1, url: 'meme-imgs/square/1.jpg', keywords: ['funny', '1'] },
-{ id: 2, url: 'meme-imgs/square/2.jpg', keywords: ['2'] }]
+var gImgs = [
+  { id: 1, url: 'meme-imgs/square/1.jpg', keywords: ['funny', '1'] },
+  { id: 2, url: 'meme-imgs/square/2.jpg', keywords: ['2'] },
+]
 
 var gMeme = {
-  selectedImgId: 5,
+  selectedImgId: 0,
   selectedLineIdx: 0,
   lines: [{ txt: 'I sometimes eat Falafel', size: 20, color: 'red' }],
 }
@@ -22,12 +24,15 @@ function getMeme(gMeme) {
 
 function setLineTxt(text, textIndex) {
   console.log('input:', text)
-  let originalText = gMeme.lines[textIndex].txt
-  gMeme.lines[textIndex].txt = text
-  console.log('txt before change:', originalText)
+  console.log('txt before change:',  gMeme.lines[textIndex].txt)
+  gMeme.lines[textIndex].txt = text  // on purpose not using variable need same address
+  // let chosenLineText = gMeme.lines[textIndex].txt
 
-  // const { txt, ...restOfLines } = gMeme.lines[0]
-  console.log('txt after change:', originalText)
+  console.log('txt after change:',  gMeme.lines[textIndex].txt)
+}
+
+function changeTextColor(color) {
+  gTextBrush.color = color
 }
 
 function getEvPos(ev) {

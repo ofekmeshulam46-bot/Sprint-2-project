@@ -14,12 +14,12 @@ function renderGallery(images) {
   // img.dataset.id = imgData.id
 
   // Append image to gallery when loaded
-
+  let imgId = 0
   images.forEach((imgData) => {
     const img = new Image()
     img.src = imgData.url
+    img.dataset.id = imgData.id
     imageGallery.appendChild(img)
-
     img.addEventListener('click', () => {
       // hide gallery
       imageGallery.style.display = 'none'
@@ -36,6 +36,7 @@ function renderGallery(images) {
         renderMeme(IMAGE) // draw on canvas
       }
       selectedImage.src = imgData.url
+      console.log('img.dataset.id:', img.dataset.id)
     })
   })
 }

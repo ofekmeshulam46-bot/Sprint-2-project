@@ -9,7 +9,7 @@
   <body onload="onInit()" onresize="onResize()">
     <header>Meme Generator</header>
 
-    <div class="inputs">
+    <div class="gallery-inputs">
       <label for="upload">Upload img from local:</label>
       <input
         type="file"
@@ -33,6 +33,24 @@
         >Download Image from Canvas</a
       >
 
+      <label for="text-color"
+        >Set text color
+        <input
+          oninput="onChangeTextColor(this.value)"
+          type="color"
+          name="text-color"
+          id="text-color"
+        />
+      </label>
+
+      <input
+        class="text-box"
+        type="text"
+        id="text-input"
+        placeholder="enter text"
+        oninput="onTextInput(this.value)"
+      />
+
       <canvas
         width="400"
         height="400"
@@ -45,13 +63,6 @@
       ></canvas>
 
       <!-- <label for="text-input">Write here:</label> -->
-      <input
-        class="text-box"
-        type="text"
-        id="text-input"
-        placeholder="enter text"
-        oninput="onTextInput(this.value)"
-      />
     </div>
 
     <!-- style="display: none"  -->
