@@ -61,8 +61,15 @@ function drawCanvasText(text) {
   gCtx.fillText(text, gElCanvas.width / 2, gElCanvas.height * 0.15) // line near the bottom
 }
 
+
+function onDownloadImg(elLink) {
+  const imgContent = gElCanvas.toDataURL('image/jpeg')
+  elLink.href = imgContent
+}
+
 // Whenever user types — update both places
 // textBox.addEventListener('input', () => renderMeme(IMAGE))
+
 
 
 
