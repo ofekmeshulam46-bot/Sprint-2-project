@@ -1,7 +1,4 @@
 .canvas-container {
-  position: relative;
-  display: block;
-
   width: 50vw;
   height: 60vh;
   /* margin: .5em auto; */
@@ -19,18 +16,9 @@
     outline: 1px solid green;
     /* background-color: white; */
   }
-
-  label[for="text-color"] {}
-
-  a {}
-
-
 }
 
 
-.text-bigger {}
-
-.text-smaller {}
 
 .text-box {
 
@@ -57,6 +45,4 @@
   opacity: 0.7;
   /* remove the default fade effect */
   color: gray;
-
-
 }
