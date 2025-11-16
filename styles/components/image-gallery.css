@@ -1,16 +1,18 @@
 .image-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
 
-.image-gallery img {
-    width: 50rem;
-    height: auto;
-    cursor: pointer;
-    border: 2px solid transparent;
-}
+    display: grid;
+    gap: 0.86rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
-.image-gallery img:hover {
-    border-color: orange;
+    img {
+        cursor: pointer;
+        border: 1.5px solid rgb(59, 117, 32);
+        max-width: 100%;
+
+        &:hover {
+            border-color: orange;
+        }
+
+    }
+
 }

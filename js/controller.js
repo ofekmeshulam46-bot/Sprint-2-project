@@ -17,21 +17,26 @@ function resizeCanvas() {
   gElCanvas.height = elContainer.offsetHeight
 }
 
-// Render meme
+function renderMemeEditor(image, imgId) {
+  renderMeme(image, imgId)
+  const elEnlargeButton = document.querySelector('.text-bigger')
+  elEnlargeButton.style.display = 'inline-block'
+  const elMinimizeButton = document.querySelector('.text-smaller')
+  elMinimizeButton.style.display = 'inline-block'
+  const elAddLineButton = document.querySelector('.add-line')
+  elAddLineButton.style.display = 'inline-block'
+  const elEditorInputs = document.querySelector('.editor-inputs')
+  elEditorInputs.style.display = 'inline-block'
+}
+
 function renderMeme(image, imgId) {
   if (!imgId) return
   gMeme.selectedImgId = imgId
   gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
   gCtx.drawImage(image, 0, 0, gElCanvas.width, gElCanvas.height)
   drawAllLines()
-
-  const elBigger = document.querySelector('.text-bigger')
-  const elSmaller = document.querySelector('.text-smaller')
-  elBigger.style.display = 'inline-block'
-  elSmaller.style.display = 'inline-block'
 }
 
-// Draw all lines of current image
 function drawAllLines() {
   const currImage = gImgs.find((img) => img.id === gMeme.selectedImgId)
   if (!currImage) return
@@ -39,9 +44,9 @@ function drawAllLines() {
   currImage.lines.forEach((line, idx) => {
     if (!line.txt) return
     let yPos
-    if (idx === 0) yPos = 0.15 // top
-    else if (idx === 1) yPos = 0.85 // bottom
-    else yPos = 0.5 // middle for 3rd+
+    if (idx === 0) yPos = 0.15
+    else if (idx === 1) yPos = 0.85
+    else yPos = 0.5
 
     gCtx.font = `${line.size}px Arial`
     gCtx.fillStyle = line.color || gTextBrush.color

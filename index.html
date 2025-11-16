@@ -6,10 +6,10 @@
     <title>Meme-Machine</title>
     <link rel="stylesheet" href="/styles/styles.css" />
   </head>
-  <body onload="onInit()" onresize="onResize()">
-    <header>Meme Generator</header>
+  <body onload="onInit()" onresize="onResize()" class="main-layout">
+    <header class="main-header full">Meme Generator</header>
 
-    <div class="gallery-inputs">
+    <div class="editor-inputs" style="display: none">
       <label for="upload">Upload img from local:</label>
       <input
         type="file"
@@ -41,7 +41,9 @@
       --
     </button>
 
-    <button onclick="onAddLine()">Add Line</button>
+    <button class="add-line" onclick="onAddLine()" style="display: none">
+      Add Line
+    </button>
 
     <div class="canvas-container" style="display: none">
       <a
@@ -51,7 +53,6 @@
         download="my-img.jpg"
         >Download Image from Canvas</a
       >
-
       <label for="text-color"
         >Set text color
         <input
@@ -61,7 +62,6 @@
           id="text-color"
         />
       </label>
-
       <input
         class="text-box"
         type="text"
@@ -70,7 +70,6 @@
         oninput="onTextInput(this.value)"
         style="display: none; border: 2px solid orange"
       />
-
       <canvas
         width="400"
         height="400"
@@ -81,11 +80,7 @@
         onmousemove="onMove(event)"
         ontouchmove="onMove(event)"
       ></canvas>
-
-      <!-- <label for="text-input">Write here:</label> -->
     </div>
-
-    <!-- style="display: none"  -->
 
     <script src="js/upload.js"></script>
     <script src="js/share.js"></script>

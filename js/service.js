@@ -1,6 +1,5 @@
 'use strict'
 
-// Default images with one line each
 var gImgs = [
   {
     id: 1,
@@ -64,27 +63,23 @@ var gImgs = [
   },
 ]
 
-// Meme state
 var gMeme = {
   selectedImgId: 1,
   selectedLineIdx: 0,
 }
 
-// Text brush defaults
 var gTextBrush = { color: 'black', size: 30 }
 
 function getCurrImage() {
   return gImgs.find((img) => img.id === gMeme.selectedImgId)
 }
 
-// Set text for current line
 function setLineTxt(text) {
   const currImage = getCurrImage()
   if (!currImage) return
   currImage.lines[gMeme.selectedLineIdx].txt = text
 }
 
-// Change text size
 function changeTextSize(delta) {
   const currImage = getCurrImage()
   if (!currImage) return
@@ -94,7 +89,6 @@ function changeTextSize(delta) {
   if (line.size > 100) line.size = 100
 }
 
-// Change text color
 function changeTextColor(color) {
   const currImage = getCurrImage()
   if (!currImage) return
@@ -102,7 +96,6 @@ function changeTextColor(color) {
   line.color = color
 }
 
-// Add a new line
 function addNewLine(defaultText = '') {
   const currImage = getCurrImage()
   if (!currImage) return

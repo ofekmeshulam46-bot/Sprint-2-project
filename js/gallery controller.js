@@ -13,18 +13,16 @@ function renderGallery(images) {
 
   images.forEach((imgData) => {
     const img = new Image()
-    img.dataset.id = imgData.id
     img.src = imgData.url // start loading
     imageGallery.appendChild(img) // append immediately
 
-    // Click handler
     img.addEventListener('click', () => {
       imageGallery.style.display = 'none'
       gElCanvasContainer.style.display = 'block'
       resizeCanvas()
 
       IMAGE = new Image()
-      IMAGE.onload = () => renderMeme(IMAGE, imgData.id)
+      IMAGE.onload = () => renderMemeEditor(IMAGE, imgData.id)
       IMAGE.src = imgData.url
 
       editLine(0)

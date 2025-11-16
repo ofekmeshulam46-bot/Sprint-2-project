@@ -2,9 +2,20 @@
   box-sizing: border-box;
 }
 
+html {
+  /* color: var(--clr-txt-base);
+  background-color: var(--clr-primary--1); */
+}
+
+
+
+body {
+  background-color: rgb(58, 184, 106);
+  margin: 0;
+}
 
 
 header {
+  margin: 0;
   text-align: center;
-
 }
