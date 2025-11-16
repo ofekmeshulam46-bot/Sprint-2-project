@@ -7,68 +7,74 @@
     <link rel="stylesheet" href="/styles/styles.css" />
   </head>
   <body onload="onInit()" onresize="onResize()" class="main-layout">
-    <header class="main-header full">Meme Generator</header>
-
-    <nav class="main-nav full">navigation</nav>
+    <header class="main-header main-layout full">
+      <div class="header-container full">
+        <h1>Meme Generator</h1>
+        <nav class="main-nav">navigation</nav>
+      </div>
+    </header>
+    <div></div>
 
     <section class="image-gallery"></section>
 
-    <section class="meme-editor"></section>
+    <section class="meme-editor" style="display: none">
+      <div class="editor">
+        <div class="editor-inputs" style="display: block">
+          <label for="upload">Upload img from local:</label>
+          <input
+            type="file"
+            id="upload"
+            class="file-input btn"
+            name="image"
+            onchange="onImgInput(event)"
+          />
+          <label for="text-color"
+            >Set text color
+            <input
+              oninput="onChangeTextColor(this.value)"
+              type="color"
+              name="text-color"
+              id="text-color"
+            />
+          </label>
+          <input
+            class="text-box"
+            type="text"
+            id="text-input"
+            placeholder="enter text"
+            oninput="onTextInput(this.value)"
+            style="border: 2px solid orange"
+          />
+        </div>
 
-    <div class="editor-inputs" style="display: none">
-      <label for="upload">Upload img from local:</label>
-      <input
-        type="file"
-        id="upload"
-        class="file-input btn"
-        name="image"
-        onchange="onImgInput(event)"
-      />
-      <label for="text-color"
-        >Set text color
-        <input
-          oninput="onChangeTextColor(this.value)"
-          type="color"
-          name="text-color"
-          id="text-color"
-        />
-      </label>
-      <input
-        class="text-box"
-        type="text"
-        id="text-input"
-        placeholder="enter text"
-        oninput="onTextInput(this.value)"
-        style="display: none; border: 2px solid orange"
-      />
-    </div>
+        <div class="editor-buttons">
+          <button
+            class="text-bigger"
+            value="1"
+            onclick="onChangeTextSize(this.value)"
+          >
+            +
+          </button>
+          <button
+            class="text-smaller"
+            value="-1"
+            onclick="onChangeTextSize(this.value)"
+          >
+            --
+          </button>
 
-    <div class="editor-buttons" style="display: none">
-      <button
-        class="text-bigger"
-        value="1"
-        onclick="onChangeTextSize(this.value)"
-      >
-        +
-      </button>
-      <button
-        class="text-smaller"
-        value="-1"
-        onclick="onChangeTextSize(this.value)"
-      >
-        --
-      </button>
+          <button class="add-line" onclick="onAddLine()">Add Line</button>
 
-      <button class="add-line" onclick="onAddLine()">Add Line</button>
-
-      <a
-        href="#"
-        class="btn"
-        onclick="onDownloadImg(this)"
-        download="my-img.jpg"
-        >Download Image from Canvas</a
-      >
-    </div>
+          <a
+            href="#"
+            class="btn"
+            onclick="onDownloadImg(this)"
+            download="my-img.jpg"
+            >Download Image from Canvas</a
+          >
+        </div>
+      </div>
+    </section>
     <div class="canvas-container" style="display: none">
       <canvas
         width="400"
@@ -81,6 +87,8 @@
         ontouchmove="onMove(event)"
       ></canvas>
     </div>
+
+    <footer class="main-footer full">footer</footer>
 
     <script src="js/upload.js"></script>
     <script src="js/share.js"></script>

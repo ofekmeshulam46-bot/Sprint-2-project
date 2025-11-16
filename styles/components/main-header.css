@@ -1,8 +1,33 @@
+.main-header {
 
 
-.main-header{
-    padding: 1.5rem;
-    font-size: 2rem;
+
+
+
     background-color: rgb(208, 240, 68);
+    padding-block: 1.5rem;
+    margin-block-end: 5rem;
+    font-size: 2rem;
+    /* text-align: center start; */
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    h1 {
+        grid-template-columns: 1;
+        font-size: 2rem;
+        padding-inline-start: 3.1rem;
+
+    }
+
+    .main-nav {
+        align-self: center;
+        margin-inline-end: 1.5rem;
+        /* transform: translateX(-50%); */
+        grid-template-columns: 3;
+        /* background-color: blue; */
+    }
 
 }

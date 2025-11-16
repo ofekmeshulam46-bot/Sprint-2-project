@@ -1,12 +1,16 @@
 .image-gallery {
 
     display: grid;
-    gap: 0.86rem;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* padding-inline: 3rem; */
+    /* padding-block-end: 5rem; */
+    margin-block-end: 10rem;
+    column-gap: 1.9rem;
+    row-gap: 4.6rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 280px)); /* @@autofit dosent grow size */
 
     img {
         cursor: pointer;
-        border: 1.5px solid rgb(59, 117, 32);
+        border: 2.5px solid rgb(59, 117, 32);
         max-width: 100%;
 
         &:hover {

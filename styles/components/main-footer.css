@@ -1,0 +1,8 @@
+.main-footer {
+    display: grid;
+    justify-items: center;
+    background-color: pink;
+    width: 100%;
+    padding-block: 0.525em;
+    font-size: 2.5rem;
+}

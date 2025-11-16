@@ -18,17 +18,15 @@ function resizeCanvas() {
 
 function renderMemeEditor(image, imgId) {
   renderMeme(image, imgId)
-  const textBox = document.querySelector('.text-box')
-  textBox.style.display = 'inline-block'
+  const editorContainer = document.querySelector('.meme-editor')
+  editorContainer.style.display = 'block'
+  // const textBox = document.querySelector('.text-box')
+  // textBox.style.display = 'inline-block'
 
-  const elEditorInputs = document.querySelector('.editor-inputs')
-  elEditorInputs.style.display = 'inline-block'
-  const elEditorButtons = document.querySelector('.editor-buttons')
-  elEditorButtons.style.display = 'inline-block'
-  // const elMinimizeButton = document.querySelector('.text-smaller')
-  // elMinimizeButton.style.display = 'inline-block'
-  // const elAddLineButton = document.querySelector('.add-line')
-  // elAddLineButton.style.display = 'inline-block'
+  // const elEditorInputs = document.querySelector('.editor-inputs')
+  // elEditorInputs.style.display = 'inline-block'
+  // const elEditorButtons = document.querySelector('.editor-buttons')
+  // elEditorButtons.style.display = 'inline-block'
 }
 
 function renderMeme(image, imgId) {
