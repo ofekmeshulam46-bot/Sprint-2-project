@@ -9,8 +9,12 @@
   <body onload="onInit()" onresize="onResize()" class="main-layout">
     <header class="main-header full">Meme Generator</header>
 
-
     <nav class="main-nav full">navigation</nav>
+
+    <section class="image-gallery"></section>
+
+    <section class="meme-editor"></section>
+
     <div class="editor-inputs" style="display: none">
       <label for="upload">Upload img from local:</label>
       <input
@@ -20,41 +24,6 @@
         name="image"
         onchange="onImgInput(event)"
       />
-    </div>
-
-    <section class="image-gallery"></section>
-
-    <section class="meme-editor"></section>
-
-    <button
-      class="text-bigger"
-      value="1"
-      onclick="onChangeTextSize(this.value)"
-      style="display: none"
-    >
-      +
-    </button>
-    <button
-      class="text-smaller"
-      value="-1"
-      onclick="onChangeTextSize(this.value)"
-      style="display: none"
-    >
-      --
-    </button>
-
-    <button class="add-line" onclick="onAddLine()" style="display: none">
-      Add Line
-    </button>
-
-    <div class="canvas-container" style="display: none">
-      <a
-        href="#"
-        class="btn"
-        onclick="onDownloadImg(this)"
-        download="my-img.jpg"
-        >Download Image from Canvas</a
-      >
       <label for="text-color"
         >Set text color
         <input
@@ -72,6 +41,35 @@
         oninput="onTextInput(this.value)"
         style="display: none; border: 2px solid orange"
       />
+    </div>
+
+    <div class="editor-buttons" style="display: none">
+      <button
+        class="text-bigger"
+        value="1"
+        onclick="onChangeTextSize(this.value)"
+      >
+        +
+      </button>
+      <button
+        class="text-smaller"
+        value="-1"
+        onclick="onChangeTextSize(this.value)"
+      >
+        --
+      </button>
+
+      <button class="add-line" onclick="onAddLine()">Add Line</button>
+
+      <a
+        href="#"
+        class="btn"
+        onclick="onDownloadImg(this)"
+        download="my-img.jpg"
+        >Download Image from Canvas</a
+      >
+    </div>
+    <div class="canvas-container" style="display: none">
       <canvas
         width="400"
         height="400"

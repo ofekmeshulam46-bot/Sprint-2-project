@@ -4,7 +4,6 @@ var gElCanvasContainer = document.querySelector('.canvas-container')
 var gElCanvas = document.querySelector('canvas')
 var gCtx = gElCanvas.getContext('2d')
 var IMAGE = new Image()
-var textBox = document.querySelector('.text-box')
 
 function onInit() {
   initGallery()
@@ -19,14 +18,17 @@ function resizeCanvas() {
 
 function renderMemeEditor(image, imgId) {
   renderMeme(image, imgId)
-  const elEnlargeButton = document.querySelector('.text-bigger')
-  elEnlargeButton.style.display = 'inline-block'
-  const elMinimizeButton = document.querySelector('.text-smaller')
-  elMinimizeButton.style.display = 'inline-block'
-  const elAddLineButton = document.querySelector('.add-line')
-  elAddLineButton.style.display = 'inline-block'
+  const textBox = document.querySelector('.text-box')
+  textBox.style.display = 'inline-block'
+
   const elEditorInputs = document.querySelector('.editor-inputs')
   elEditorInputs.style.display = 'inline-block'
+  const elEditorButtons = document.querySelector('.editor-buttons')
+  elEditorButtons.style.display = 'inline-block'
+  // const elMinimizeButton = document.querySelector('.text-smaller')
+  // elMinimizeButton.style.display = 'inline-block'
+  // const elAddLineButton = document.querySelector('.add-line')
+  // elAddLineButton.style.display = 'inline-block'
 }
 
 function renderMeme(image, imgId) {
